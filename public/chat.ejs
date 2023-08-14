@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Chat</h1>
+        <p id="room"><%= room %></p>
+
+        <div id="message-container"></div>
+
+        <div id="input-container">
+            <div id="join-container" class="input-section">
+                <input type="text" id="nickname-input" placeholder="Nickname" value="Guest">
+                <button id="join-button" class="action-button">Join</button>
+            </div>
+            <div id="message-input-container" class="input-section">
+                <textarea id="message-input" placeholder="Input message"></textarea>
+                <button id="send-button" class="action-button">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
