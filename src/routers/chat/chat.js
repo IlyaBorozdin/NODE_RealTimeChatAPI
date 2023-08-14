@@ -5,9 +5,9 @@ const appRoot = require('app-root-path');
 const getHandler = require('./get');
 
 const publicDir = path.join(appRoot.toString(), 'public');
-const homepageRouter = express.Router();
+const chatRouter = express.Router();
 
-homepageRouter.use(express.static(publicDir));
-homepageRouter.get('/', getHandler(path.join(publicDir, 'home.html')));
+chatRouter.use(express.static(publicDir));
+chatRouter.get('/:room', getHandler);
 
-module.exports = homepageRouter;
+module.exports = chatRouter;

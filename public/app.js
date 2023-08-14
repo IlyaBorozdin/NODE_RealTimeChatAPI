@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const joinButton = document.querySelector('#join-button');
     const sendButton = document.querySelector('#send-button');
+    const exitButton = document.querySelector('#exit-button');
 
     const messageContainer = document.querySelector('#message-container');
     const messageInputContainer = document.querySelector('#message-input-container');
@@ -33,6 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    exitButton.addEventListener('click', (event) => {
+        socket.emit('left-user', room, name);
+        window.location.href = 'http://localhost:80';
+    });
+
     socket.on('message', ({ message, name, id }) => {
         if (id === socket.id) {
             addMessage(message, 'right');
@@ -43,6 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     socket.on('new-user', (name) => {
         addMessage(`Welcome, ${name}!`, 'center');
+    });
+
+    socket.on('left-user', (name) => {
+        addMessage(`${name} leaves chat.`, 'center');
     });
 
     function addMessage(text, type) {

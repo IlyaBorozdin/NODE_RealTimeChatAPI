@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Room</h1>
+
+        <div class="input-section">
+            <input type="text" id="room-input" placeholder="Room">
+            <button id="choose-button" class="action-button">Choose</button>
+        </div>
+    </div>
+
+    <script>
+        const roomInput = document.querySelector('#room-input');
+        const chooseButton = document.querySelector('#choose-button');
+
+        chooseButton.addEventListener('click', (event) => {
+            if (roomInput.value !== '') {
+                window.location.href = 'http://localhost:80/' + roomInput.value.trim();
+            }
+        });
+    </script>
+</body>
+</html>

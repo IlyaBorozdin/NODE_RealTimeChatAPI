@@ -6,22 +6,13 @@ function ioController(server) {
 
     io.on('connection', (socket) => {
 
-        setInterval(() => {
-            const rooms = io.sockets.adapter.rooms;
-        
-            for (const room in rooms) {
-                if (rooms[room]?.length === 0) {
-                    delete rooms[room];
-                }
-            }
-        }, 5 * 60 * 1000);
-
         socket.on('new-user', (room, name) => {
             socket.join(room);
             io.to(room).emit('new-user', name);
         });
 
         socket.on('left-user', (room, name) => {
+            socket.leave(room);
             io.to(room).emit('left-user', name);
         });
 

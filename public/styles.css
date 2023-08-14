@@ -50,6 +50,7 @@ h1 {
     margin-top: 10px;
 }
 
+#room-input,
 #nickname-input,
 #message-input {
     width: 100%;
