@@ -1,5 +1,8 @@
+const storage = require('./db/storage');
+
 const exit = (exitCode) => {
     console.log('Server is closed');
+    storage.end();
     process.exit(exitCode);
 };
 

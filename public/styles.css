@@ -23,103 +23,55 @@ h1 {
     margin: 0 0 1em;
 }
 
-#message-container {
-    height: 150px;
-    overflow: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    resize: vertical;
+p {
+    font-size: 16px;
+    margin: 10px 0;
 }
 
-#message-container::-webkit-scrollbar {
-    width: 5px;
-}
-
-#message-container::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 2.5px;
-}
-
-#message-container::-webkit-scrollbar-track {
-    background-color: #f2f2f2;
-}
-
-#input-container {
+form {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    align-items: center;
+    margin-top: 2em;
 }
 
-#room-input,
-#nickname-input,
-#message-input {
+label {
+    margin-bottom: 10px;
+}
+
+input {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
     font-size: 16px;
 }
 
-#message-input {
-    height: auto;
-    min-height: 40px;
-    resize: none;
-    overflow: hidden;
-}
-
-.input-section {
+.buttons {
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10px;
 }
 
-.action-button {
-    padding: 10px 20px; /* Updated padding here */
+button {
+    flex: 1;
+    padding: 10px;
     font-size: 16px;
-    background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 10px;
 }
 
-.action-button:hover {
+.buttons button {
+    background-color: #4CAF50;
+    min-width: 100px;
+    margin-right: 0;
+}
+
+.buttons button:hover {
     background-color: #45a049;
-}
-
-#nickname-input {
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#input-container textarea {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 16px;
-    font-family: inherit;
-    resize: none;
-}
-
-.message {
-    text-align: left;
-}
-
-.your-message {
-    text-align: right;
-}
-
-.message-center {
-    text-align: center;
-    opacity: 0.7;
-}
-
-#message-input-container {
-    display: none;
-}
-
-.action-button[disabled] {
-    background-color: #ccc;
-    color: #666;
+    transform: scale(1.05);
 }

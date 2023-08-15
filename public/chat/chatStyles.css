@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2.5em;
+    margin: 0 0 1em;
+}
+
+#message-container {
+    height: 150px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: vertical;
+}
+
+#message-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+#message-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 2.5px;
+}
+
+#message-container::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+}
+
+#input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+#room-input,
+#nickname-input,
+#message-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#message-input {
+    height: auto;
+    min-height: 40px;
+    resize: none;
+    overflow: hidden;
+}
+
+.input-section {
+    display: flex;
+    align-items: center;
+}
+
+.action-button {
+    padding: 10px 20px; /* Updated padding here */
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.action-button:hover {
+    background-color: #45a049;
+}
+
+#nickname-input {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#input-container textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    resize: none;
+}
+
+.message {
+    text-align: left;
+}
+
+.your-message {
+    text-align: right;
+}
+
+.message-center {
+    text-align: center;
+    opacity: 0.7;
+}
+
+.action-button[disabled] {
+    background-color: #ccc;
+    color: #666;
+}

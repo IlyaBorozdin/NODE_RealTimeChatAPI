@@ -1,6 +1,6 @@
 const getHandler = (req, res, next) => {
     try {
-        return res.status(200).render('chat', req.params);
+        res.status(200).render('chat/chat', req.query);
     }
     catch (err) {
         return res.status(404).json({ error: 'Page Not Found' });

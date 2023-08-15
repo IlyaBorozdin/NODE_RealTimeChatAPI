@@ -8,6 +8,7 @@ const publicDir = path.join(appRoot.toString(), 'public');
 const chatRouter = express.Router();
 
 chatRouter.use(express.static(publicDir));
-chatRouter.get('/:room', getHandler);
+chatRouter.use(express.static(path.join(publicDir, 'chat')));
+chatRouter.get('/', getHandler);
 
 module.exports = chatRouter;
